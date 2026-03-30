@@ -117,9 +117,7 @@ def _extrair_dados(page) -> dict:
     dados["partes"] = _extrair_partes(page)
 
     # Movimentações — tenta expandir todas primeiro
-    btn_todas = page.query_selector("#linkmovalialialialialialialialialialialialialialialialialialialialialialialialia")
-    if not btn_todas:
-        btn_todas = page.query_selector("a.linkMovVinc  , #linkMovVincTodas, a[onclick*='todas']")
+    btn_todas = page.query_selector("#linkMovVincTodas, a[onclick*='todas']")
     if btn_todas:
         try:
             btn_todas.click()
